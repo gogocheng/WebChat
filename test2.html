@@ -136,15 +136,16 @@
 		
 		<ul class="content">
 			<li>
-				<img src="static/img/01.jpg"  class="imgright" alt="张三"><span class="spanright">你好</span>
+				<img src="static/img/02.jpg"  class="imgright" alt="李四"><span class="spanright">你好</span>
+
 			</li>
 			<li>
-				<img src="static/img/02.jpg"  class="imgleft" alt="李四"><span class="spanleft">你好</span>
+				<img src="static/img/01.jpg"  class="imgleft" alt="张三"><span class="spanleft">你好</span>
 			</li>
 		</ul>
 		
 		<div class="footer">
-			<input id="text" type="text" placeholder="请输入。。。。。。">
+			<input id="text" type="text" placeholder="请输入......">
 			<span id="btn">发送</span>
 		</div>
 	</div>
@@ -187,10 +188,10 @@
 
 		if( name == msgObj['name']){
 			//显示
-		$(".content").append('<li><img src="static/img/01.jpg" class="imgright" alt="'+msgObj['name']+'"><span class="spanright">'+msgObj['content']+'</span></li>');
+		$(".content").append('<li><img src="static/img/02.jpg" class="imgright" alt="'+msgObj['name']+'"><span class="spanright">'+msgObj['content']+'</span></li>');
 		}else{
 			//显示
-		$(".content").append('<li><img src="static/img/02.jpg" class="imgleft" alt="'+msgObj['name']+'"><span class="spanleft">'+msgObj['content']+'</span></li>');
+		$(".content").append('<li><img src="static/img/01.jpg" class="imgleft" alt="'+msgObj['name']+'"><span class="spanleft">'+msgObj['content']+'</span></li>');
 		}
 		
 	}
