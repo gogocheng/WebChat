@@ -13,7 +13,7 @@
 		#container{
 			width: 450px;
 			height: 680px;
-			margin: 20 auto 0;
+			margin: 20px auto 0;
 			background: #eee;
 			position: relative;
 			box-shadow: 20px 20px 55px #777;
@@ -77,8 +77,8 @@
 			overflow: hidden;
 		}
 		img{
-			width: 60px;
-			height: 60px;
+			width: 45px;
+			height: 45px;
 		}
 		.content{
 			font-size: 20px;
@@ -96,6 +96,7 @@
 			overflow: hidden;
 		}
 		.content li img{
+
 			float: left;
 		}
 		.content li span{
@@ -130,15 +131,15 @@
 	<div id="container">
 		<div class="header">
 			<span style="float: left" >模拟聊天</span>
-			<span style="float: right" >时间</span>
+			<span style="float: right" class="time"></span>
 		</div>
 		
 		<ul class="content">
 			<li>
-				<img src="" class="imgright" alt="张三"><span class="spanright">你好</span>
+				<img src="static/img/01.jpg"  class="imgright" alt="张三"><span class="spanright">你好</span>
 			</li>
 			<li>
-				<img src="" class="imgleft" alt="李四"><span class="spanleft">你好</span>
+				<img src="static/img/02.jpg"  class="imgleft" alt="李四"><span class="spanleft">你好</span>
 			</li>
 		</ul>
 		
@@ -151,12 +152,34 @@
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
+	//获取时间
+	function checkTime(i) {
+		if (i < 10) {
+			i = "0" + i;
+		}
+		return i;
+	}
+	function showTime() {
+		var myDate = new Date();
+		var h = myDate.getHours();
+		var m = myDate.getMinutes();
+		var s = myDate.getSeconds();
+		h = checkTime(h);
+		m = checkTime(m);
+		s = checkTime(s);
+		var timeStr = h + ":" + m + ":" + s;
+		$(".time").text(timeStr);
+	}
+
+	setInterval("showTime()", 1000)
+</script>
+<script>
 	var name = "李四";
 	//实例化
 	var ws = new WebSocket("ws://localhost:2000");
 	//打开
 	ws.onopen = function(){
-		alert("正常");
+		alert("正常连接");
 	}
 	//获得消息,服务端推送数据
 	ws.onmessage  = function(msg){
