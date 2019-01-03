@@ -187,10 +187,10 @@
 
 		if( name == msgObj['name']){
 			//显示
-		$(".content").append('<li><img src="" class="imgright" alt="'+msgObj['name']+'"><span class="spanright">'+msgObj['content']+'</span></li>');
+		$(".content").append('<li><img src="static/img/01.jpg" class="imgright" alt="'+msgObj['name']+'"><span class="spanright">'+msgObj['content']+'</span></li>');
 		}else{
 			//显示
-		$(".content").append('<li><img src="" class="imgleft" alt="'+msgObj['name']+'"><span class="spanleft">'+msgObj['content']+'</span></li>');
+		$(".content").append('<li><img src="static/img/02.jpg" class="imgleft" alt="'+msgObj['name']+'"><span class="spanleft">'+msgObj['content']+'</span></li>');
 		}
 		
 	}
@@ -205,7 +205,6 @@
 		 	}
 		 	//转成json
 		 	var msgStr = JSON.stringify(msg);
-		 	console.log(msgStr);
 			//发送
 			ws.send(msgStr);
 
